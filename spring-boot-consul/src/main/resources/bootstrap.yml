@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: locals
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        format: YAML
+        prefix: prefix #default: config
+        name: name
+        defaultContext: context #default: application
+        profileSeparator: '::'
+        data-key: key

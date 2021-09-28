@@ -1,9 +1,8 @@
 version: "3.4"
 services:
-  hello-world:
-    build: hello-world
-    container_name: 'hello-world'
-    environment:
-      - spring_profiles_active=docker
+  consul:
+    image: consul
     ports:
-      - 8081:8081
+      - "8400:8400"
+      - "8500:8500"
+      - "8600:8600"

@@ -1,4 +1,4 @@
-ARG SERVICE_NAME=hello-world
+ARG SERVICE_NAME=spring-boot-consul
 
 FROM maven:3.6.3-jdk-11 AS builder
 ARG SERVICE_NAME
