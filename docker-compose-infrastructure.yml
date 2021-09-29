@@ -1,8 +1,18 @@
 version: "3.4"
 services:
   consul:
-    image: consul
+    image: bitnami/consul:latest
+    volumes:
+      - ./infrastructure/consul/data:/bitnami
+    networks:
+      - consul-network
     ports:
-      - "8400:8400"
-      - "8500:8500"
-      - "8600:8600"
+      - '8300:8300'
+      - '8301:8301'
+      - '8301:8301/udp'
+      - '8500:8500'
+      - '8600:8600'
+      - '8600:8600/udp'
+networks:
+  consul-network:
+    driver: bridge

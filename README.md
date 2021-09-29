@@ -26,6 +26,7 @@ The example project for StringBoot service
 
 ## Start infrastructure
 
+- Start project
 ```shell script
 $ docker-compose -f ./docker-compose-infrastructure.yml -p spring-boot-consul-infrastructure up -d
 ```
@@ -36,7 +37,7 @@ $ docker-compose -f ./docker-compose-infrastructure.yml -p spring-boot-consul-in
 - Build project
 ```shell script
 $ ./mvnw clean package
-$ cd hello-word
+$ cd spring-boot-consul
 $ ../mvnw spring-boot:run
 ...
 ```
@@ -59,8 +60,8 @@ curl http://localhost:8081/greet?name=World
 - Stop infrastructure & services in docker
 
 ```shell script
-$ docker-compose -f ./docker-compose-infrastructure.yml down
-$ docker-compose -f ./docker-compose-service.yml down
+$ docker-compose -f ./docker-compose-infrastructure.yml -p spring-boot-consul-infrastructure down
+$ docker-compose -f ./docker-compose-service.yml -p spring-boot-consul-service down
 ```
 
 ## Contribute
